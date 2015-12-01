@@ -16,11 +16,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			url: "/",
 			views: {
 				'main': {
-					templateUrl: 'templates/list.html',
+					templateUrl: '/app/templates/list.html',
 					controller: 'PersonListController'
 				},
 				'search': {
-					templateUrl: 'templates/searchform.html',
+					templateUrl: '/app/templates/searchform.html',
 					controller: 'PersonListController'
 				}
 			}
@@ -29,7 +29,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			url: "/edit/:email",
 			views: {
 				'main': {
-					templateUrl: 'templates/edit.html',
+					templateUrl: '/app/templates/edit.html',
 					controller: 'PersonDetailController'
 				}
 			}
@@ -38,7 +38,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			url: "/create",
 			views: {
 				'main': {
-					templateUrl: 'templates/edit.html',
+					templateUrl: '/app/templates/edit.html',
 					controller: 'PersonCreateController'
 				}
 			}
@@ -126,7 +126,7 @@ app.controller('PersonListController', function ($scope, $modal, ContactService)
 		$scope.contacts.selectedPerson = {};
 		$scope.createModal = $modal({
 			scope: $scope,
-			template: 'templates/modal.create.tpl.html',
+			template: '/app/templates/modal.create.tpl.html',
 			show: true
 		})
 	};
@@ -139,7 +139,7 @@ app.service('ContactService', function (Contact, $rootScope, $q, toaster) {
 
 	var self = {
 		'getPerson': function (email) {
-			console.log(email);
+//			console.log(email);
 			for (var i = 0; i < self.persons.length; i++) {
 				var obj = self.persons[i];
 				if (obj.email == email) {
@@ -179,7 +179,7 @@ app.service('ContactService', function (Contact, $rootScope, $q, toaster) {
 				};
 
 				Contact.get(params, function (data) {
-					console.log(data);
+//					console.log(data);
 					angular.forEach(data.results, function (person) {
 						self.persons.push(new Contact(person));
 					});
