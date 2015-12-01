@@ -29,7 +29,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			url: "/edit/:email",
 			views: {
 				'main': {
-					templateUrl: 'app/templates/edit.html',
+					templateUrl: 'app/templates/edit.html', 
 					controller: 'PersonDetailController'
 				}
 			}
