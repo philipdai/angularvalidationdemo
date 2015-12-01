@@ -16,11 +16,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			url: "/",
 			views: {
 				'main': {
-					templateUrl: '/app/templates/list.html',
+					templateUrl: '../app/templates/list.html',
 					controller: 'PersonListController'
 				},
 				'search': {
-					templateUrl: '/app/templates/searchform.html',
+					templateUrl: '../app/templates/searchform.html',
 					controller: 'PersonListController'
 				}
 			}
@@ -29,7 +29,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			url: "/edit/:email",
 			views: {
 				'main': {
-					templateUrl: '/app/templates/edit.html',
+					templateUrl: '../app/templates/edit.html',
 					controller: 'PersonDetailController'
 				}
 			}
@@ -38,7 +38,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			url: "/create",
 			views: {
 				'main': {
-					templateUrl: '/app/templates/edit.html',
+					templateUrl: '../app/templates/edit.html',
 					controller: 'PersonCreateController'
 				}
 			}
@@ -126,7 +126,7 @@ app.controller('PersonListController', function ($scope, $modal, ContactService)
 		$scope.contacts.selectedPerson = {};
 		$scope.createModal = $modal({
 			scope: $scope,
-			template: '/app/templates/modal.create.tpl.html',
+			template: '../app/templates/modal.create.tpl.html',
 			show: true
 		})
 	};
